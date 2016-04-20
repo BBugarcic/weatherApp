@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Weather App</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+
+    
+  </head>
+
+  <body>
+
+  <div class="cover">
+
+    <div class="box-wrapper">
+      
+      <!--side panel with more detailed informations about current weather-->
+      <div class="panel hidden animated" id="sidePanel">
+        <span class="glyphicon glyphicon-remove pull-right" aria-hidden="true" id="close-panel"></span>
+        
+        <div class="" id="sideInfo">
+          <div class="row">
+            <div class="col-xs-12 text-center">
+              <p id="info-temp"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-right">
+              <spam>Date:</spam>
+            </div>
+            <div class="col-xs-6">
+              <spam id="info-date"></spam>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-right">
+              <spam>Place:</spam>
+            </div>
+            <div class="col-xs-6">
+              <spam id="info-place"></spam>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-right">
+              <spam>Pressure:</spam>
+            </div>
+            <div class="col-xs-6">
+              <spam id="info-pressure"></spam>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-right">
+              <spam>Humidity:</spam>
+            </div>
+            <div class="col-xs-6">
+              <spam id="info-humidity"></spam>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6 text-right">
+              <spam>Wind:</spam>
+            </div>
+            <div class="col-xs-6">
+              <spam id="info-wind"></spam>
+            </div>
+          </div>
+          
+          <!--buttons to change units--> 
+          <div class="text-center" id="changeUnits">
+              <div class="btn-group" role="group" aria-label="...">
+                <button type="button" class="btn btn-default active" id="celsius">°C</button>
+                <button type="button" class="btn btn-default" id="fahrenheit">°F</button>
+              </div>
+          </div>
+          <div class="text-center more-info get-forecast">
+            <spam>Next 7 days</spam>
+          </div>                 
+        </div>
+
+      </div>
+      
+      <!-- short information about current weather (temp, weather icon, place) -->
+      <div class="row current text-center" id="current-weather">
+          <div class="col-xs-12">
+            <img src="#" alt="" id="current-icon" />
+            <p class="location"></p>
+            <p class="temp-celsius" id="temp-current"></p>
+            <p class="date"></p>
+          </div>
+          <div class="col-xs-6 text-center more-info" id="see-more">
+            <spam >See more</spam>
+          </div>
+          <div class="col-xs-6 text-center more-info get-forecast">
+            <spam>Next 7 days</spam>
+          </div>
+       </div>
+        
+    </div>
+  </div>
+  
+  <!-- next 7 day forcast -->
+  <div id="forecast-wrapper">
+    <div id="forecast">
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="1">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <p id="date1"></p>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon1" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp1"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp1"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="2">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date2"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon2" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp2"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp2"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="3">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date3"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon3" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp3"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp3"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="4">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date4"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon4" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp4"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp4"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="5">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date5"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon5" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp5"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp5"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="6">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date6"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon6" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp6"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp6"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row day">
+        <div class="col-sm-12 col-xs-12" id="7">
+          <div class="row">
+            <div class="col-sm-4 col-xs-4 pad-top">
+              <spam id="date7"></spam>
+            </div>
+            <div class="col-sm-4 col-xs-4">
+              <img src="#" alt="" id="icon7" />
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="max-temp7"></spam>
+            </div>
+            <div class="col-sm-2 col-xs-2 pad-top">
+              <spam class="temp-celsius" id="min-temp7"></spam>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center" id="back-to-current">
+        <spam>Current</spam>
+      </div>
+    </div>
+  </div>
+      
+  </div>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js'></script>
+  <script src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js'></script>
+  <script src="js/index.js"></script>
+
+  </body>
+</html>

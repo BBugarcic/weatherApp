@@ -1,0 +1,160 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Lora:400,700);
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+
+
+.cover {
+  height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* side panel with more derails about current weather */
+#sidePanel {
+  position: relative;
+  background-color: lightgrey;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  opacity: 0.6;
+}
+
+/* div with convert buttons (celsius-fahrenheit) */
+#changeUnits {
+ margin: 10px;
+}
+
+/* more inforamtion about current weather */
+#sideInfo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  font-family: Oswald;
+  font-size: 1em;
+}
+
+#close-panel {
+  margin: 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.box-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+#current-weather {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  width: 300px;
+  margin-left: -150px;
+  background-color: lightgrey;
+  opacity: 0.4;
+  box-shadow: 4px 4px 5px;
+  font-family: Oswald;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+/* class that applys to navigation links*/
+.more-info {
+  margin: 10px 0px 10px 0px;
+  cursor: pointer;
+}
+
+.more-info:hover {
+    -ms-transform: scale(1.2, 1.2); /* IE 9 */
+    -moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
+
+#forecast-wrapper {
+  position: relative;
+  background-color: lightblue;
+  height: 110vh;
+  border-top: white solid 0.5px;
+   
+}
+
+#forecast {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  background-color: lightgrey;
+  opacity: 0.4;
+  border-radius: 5px;
+}
+
+.day,
+.current {
+  border-bottom: solid white 0.5px;
+  font-family: Oswald;
+  font-size:1vw;
+}
+
+#back-to-current {
+  font-family: Oswald; 
+  cursor: pointer;
+  margin: 5px 0px 5px 0px;
+}
+
+#back-to-current:hover {
+    -ms-transform: scale(1.2, 1.2); /* IE 9 */
+    -moz-transform: scale(1.2, 1.2);
+    -webkit-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
+
+@media screen and (min-width: 980px) /* Desktop */ {
+  .day,
+  .current {
+    font-size: 1vw;
+  }
+}
+
+@media screen  and (max-width: 979px) /* Tablet */ {
+  .day,
+  .current {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 500px)/* Mobile */ {
+  #forecast {
+    width: 90%;
+  }
+  
+  .day,
+  .current {
+    font-size: 4vw;
+  }
+}
+
+@media screen and (max-width: 500px) and (orientation: landscape)/* Mobile */ {
+
+}
+
+.pad-top {
+  padding-top: 5%;
+}
+
+img {
+  font-size: 0.5em;
+}
+
+#temp-current,
+#info-temp {
+  font-size: 2em;
+}
